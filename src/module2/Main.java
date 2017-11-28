@@ -51,5 +51,16 @@ class Main {
         user.setHobby(in.nextLine());
 
         System.out.println(user);
+        System.out.println("=============================");
+
+        System.out.println("\n Человек по имени " + user.getName() + " живет в городе " + user.getCity() + ".\n" +
+                " Этому человеку " + user.getAge() + " лет и любит он заниматься " + user.getHobby());
+        System.out.println("=============================");
+
+        System.out.println("\n" + user.getName() + " - имя\n" +
+                        user.getCity() + " - город\n" +
+                        user.getAge() + " - возраст\n" +
+                        user.getHobby() + " - хобби");
+        System.out.println("=============================");
     }
 }

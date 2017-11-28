@@ -77,10 +77,10 @@ class User {
     @Override
     public String toString() {
         return "User" +
-                "\n name: '" + name + '\'' +
-                "\n city: '" + city + '\'' +
+                "\n name: " + name +
+                "\n city: " + city +
                 "\n age: " + age +
-                "\n hobby: '" + hobby + '\''
+                "\n hobby: " + hobby
                 ;
     }
 }
