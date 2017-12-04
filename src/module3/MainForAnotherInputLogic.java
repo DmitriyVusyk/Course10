@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * task 3 another version of input array
  */
-public class MainForAnotherInputLogic {
+ class MainForAnotherInputLogic {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
