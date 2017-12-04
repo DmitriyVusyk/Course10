@@ -58,9 +58,9 @@ class Main {
         System.out.println("=============================");
 
         System.out.println("\n" + user.getName() + " - имя\n" +
-                        user.getCity() + " - город\n" +
-                        user.getAge() + " - возраст\n" +
-                        user.getHobby() + " - хобби");
+                user.getCity() + " - город\n" +
+                user.getAge() + " - возраст\n" +
+                user.getHobby() + " - хобби");
         System.out.println("=============================");
     }
 }
