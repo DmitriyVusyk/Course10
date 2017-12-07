@@ -5,6 +5,9 @@ package module3;
  */
 class Module3Utils {
 
+    private Module3Utils() {
+    }
+
 //task1
 
     /**
