@@ -10,7 +10,6 @@ class Main {
     public static void main(String[] args) {
 
         int arrayCapacity;
-        boolean check = false;
         Scanner in = new Scanner(System.in);
 
 

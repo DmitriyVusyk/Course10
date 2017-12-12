@@ -10,6 +10,8 @@ import java.util.Scanner;
  */
 public class Controller implements ControllerAPI {
 
+    private static Scanner scanner = new Scanner(System.in);
+
     public Controller() {
     }
 
@@ -36,7 +38,6 @@ public class Controller implements ControllerAPI {
 
         boolean answerMenuSelect = false;
 
-        Scanner scanner = new Scanner(System.in);
         while (!answerMenuSelect) {
             switch (scanner.nextLine()) {
 
@@ -102,8 +103,6 @@ public class Controller implements ControllerAPI {
 
             System.out.println("Print Yes or No");
 
-            Scanner scanner = new Scanner(System.in);
-
             String consoleInput = scanner.nextLine();
 
             if (consoleInput.equalsIgnoreCase("yes")) {
@@ -130,27 +129,23 @@ public class Controller implements ControllerAPI {
 
     private void runTask1() {
 
-
         boolean answer = false;
 
         System.out.println("Print numbers from 0 to x. ");
 
         while (!answer) {
-
-            Scanner scanner = new Scanner(System.in);
-
             System.out.println("Enter x: ");
             if (scanner.hasNextInt()) {
                 Module4Utils.printNumbers(scanner.nextInt());
                 answer = true;
             } else {
                 printInputError();
+                scanner.nextLine();
             }
         }
     }
 
     private void runTask2() {
-
 
         int h = 0;
         int l = 0;
@@ -159,10 +154,7 @@ public class Controller implements ControllerAPI {
 
         System.out.println("Draw rectangle with height and length.");
 
-
         while (!answerLength) {
-
-            Scanner scanner = new Scanner(System.in);
 
             System.out.println("Enter int length of rectangle: ");
 
@@ -171,12 +163,11 @@ public class Controller implements ControllerAPI {
                 answerLength = true;
             } else {
                 printInputError();
+                scanner.nextLine();
             }
         }
 
         while (!answerHeight) {
-
-            Scanner scanner = new Scanner(System.in);
 
             System.out.println("Enter int the height of rectangle: ");
 
@@ -185,6 +176,7 @@ public class Controller implements ControllerAPI {
                 answerHeight = true;
             } else {
                 printInputError();
+                scanner.nextLine();
             }
         }
 
@@ -198,10 +190,7 @@ public class Controller implements ControllerAPI {
 
         System.out.println("Draw a square with side length.");
 
-
         while (!answer) {
-
-            Scanner scanner = new Scanner(System.in);
 
             System.out.println("Please enter int side length: ");
 
@@ -210,6 +199,7 @@ public class Controller implements ControllerAPI {
                 answer = true;
             } else {
                 printInputError();
+                scanner.nextLine();
             }
         }
 
@@ -218,8 +208,6 @@ public class Controller implements ControllerAPI {
     }
 
     private void runTask4() {
-
-        Scanner scanner = new Scanner(System.in);
 
         Integer a = null;
         Integer b = null;
@@ -230,7 +218,6 @@ public class Controller implements ControllerAPI {
 
         System.out.println("Compare two numbers");
 
-
         while (!answerFromSwitch) {
 
             System.out.println("1. Compare two integers. " +
@@ -240,32 +227,29 @@ public class Controller implements ControllerAPI {
 
                 case "1":
 
-
                     while (!answerA) {
 
-                        Scanner sc = new Scanner(System.in);
-
                         System.out.println("Enter first integer: ");
-
+                        Scanner sc = Controller.scanner;
                         if (sc.hasNextInt()) {
                             a = sc.nextInt();
                             answerA = true;
                         } else {
                             printInputError();
+                            sc.nextLine();
                         }
                     }
 
                     while (!answerB) {
 
-                        Scanner sc = new Scanner(System.in);
-
                         System.out.println("Enter second integer: ");
 
-                        if (sc.hasNextInt()) {
-                            b = sc.nextInt();
+                        if (scanner.hasNextInt()) {
+                            b = scanner.nextInt();
                             answerB = true;
                         } else {
                             printInputError();
+                            scanner.nextLine();
                         }
                     }
 
@@ -274,41 +258,38 @@ public class Controller implements ControllerAPI {
 
                 case "2":
 
-
                     while (!answerA) {
 
                         System.out.println("Enter integer: ");
 
-                        Scanner sc = new Scanner(System.in);
-
-
-                        if (sc.hasNextInt()) {
-                            a = sc.nextInt();
+                        if (scanner.hasNextInt()) {
+                            a = scanner.nextInt();
                             answerA = true;
                         } else {
                             printInputError();
+                            scanner.nextLine();
                         }
                     }
-
 
                     while (!answerB) {
 
-                        Scanner sc = new Scanner(System.in);
-
                         System.out.println("Enter float: ");
 
-                        if (sc.hasNextFloat()) {
-                            bFloat = sc.nextFloat();
+                        if (scanner.hasNextFloat()) {
+                            bFloat = scanner.nextFloat();
                             answerB = true;
                         } else {
                             printInputError();
+                            scanner.nextLine();
                         }
                     }
                     answerFromSwitch = true;
+                    scanner.nextLine();
                     break;
 
                 default:
                     printInputError();
+                    scanner.nextLine();
             }
         }
 
@@ -323,27 +304,25 @@ public class Controller implements ControllerAPI {
 
     private void runTask5() {
 
-
         boolean answer = false;
 
         System.out.println("Print numbers from 0 to x. ");
 
         while (!answer) {
 
-            Scanner scanner = new Scanner(System.in);
-
             System.out.println("Enter int x: ");
+
             if (scanner.hasNextInt()) {
                 System.out.println(Module4Utils.printNumbersWithRecursion(scanner.nextInt()));
                 answer = true;
             } else {
                 printInputError();
+                scanner.nextLine();
             }
         }
     }
 
     private void runTask6() {
-
 
         int h = 0;
         int l = 0;
@@ -352,10 +331,7 @@ public class Controller implements ControllerAPI {
 
         System.out.println("Draw rectangle with height and length.");
 
-
         while (!answerLength) {
-
-            Scanner scanner = new Scanner(System.in);
 
             System.out.println("Enter int length of rectangle: ");
 
@@ -364,12 +340,11 @@ public class Controller implements ControllerAPI {
                 answerLength = true;
             } else {
                 printInputError();
+                scanner.nextLine();
             }
         }
 
         while (!answerHeight) {
-
-            Scanner scanner = new Scanner(System.in);
 
             System.out.println("Enter int height of rectangle: ");
 
@@ -378,6 +353,7 @@ public class Controller implements ControllerAPI {
                 answerHeight = true;
             } else {
                 printInputError();
+                scanner.nextLine();
             }
         }
 

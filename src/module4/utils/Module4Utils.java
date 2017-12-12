@@ -35,13 +35,10 @@ public class Module4Utils {
             System.out.println("Length or height of rectangle is zero or negative. " +
                     "Please check parameter");
         } else {
-
             for (int i = 0; i < height; i++) {
-
                 for (int j = 0; j < length; j++) {
                     System.out.print(" + ");
                 }
-
                 System.out.print("\n");
             }
         }
@@ -61,11 +58,9 @@ public class Module4Utils {
                     "Please check parameter");
         } else {
             for (int i = 0; i < sideLength; i++) {
-
                 for (int j = 0; j < sideLength; j++) {
                     System.out.print(" + ");
                 }
-
                 System.out.print("\n");
             }
         }
@@ -82,13 +77,11 @@ public class Module4Utils {
      */
     public static int compareTwoNumbers(int a, int b) {
 
-        if (a < b) {
-            return b;
-        } else if (a > b) {
-            return a;
+        if (a != b) {
+            return (a < b) ? b : a;
         } else {
             System.out.println("numbers are equal");
-            return 0;
+            return a;
         }
     }
 
@@ -103,13 +96,11 @@ public class Module4Utils {
 
         float c = (float) a;
 
-        if (c < b) {
-            return b;
-        } else if (c > b) {
-            return c;
+        if (c != b) {
+            return b < c ? c : b;
         } else {
             System.out.println("numbers are equal");
-            return 0;
+            return a;
         }
     }
 
@@ -121,7 +112,7 @@ public class Module4Utils {
     public static String printNumbersWithRecursion(int x) {
 
         if (x == 0) {
-            return "0";
+            return " ";
         }
         return printNumbersWithRecursion(x - 1) + " " + x;
     }
@@ -141,7 +132,6 @@ public class Module4Utils {
         if (height <= 0) {
             return " ";
         } else {
-
             for (int i = 0; i < height; i++) {
 
                 for (int j = 0; j < length; j++) {
