@@ -1,9 +1,5 @@
 package module5;
 
-
-/**
- * Created by dmytrovusyk on 12.12.17.
- */
 public class Main {
 
     public static void main(String[] args) {
