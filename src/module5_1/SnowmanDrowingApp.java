@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.util.Random;
 
-public class PaintFX extends Application {
+public class SnowmanDrowingApp extends Application {
     private static final int WINDOW_WIDTH = 1000;
     private static final int WINDOW_HEIGHT = 700;
 
