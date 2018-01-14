@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.util.Random;
 
-public class SnowmanDrowingApp extends Application {
+public class SnowmanDrawingApp extends Application {
     private static final int WINDOW_WIDTH = 1000;
     private static final int WINDOW_HEIGHT = 700;
 
@@ -59,10 +59,6 @@ public class SnowmanDrowingApp extends Application {
 
     private void setCirclePosition(double nextCirclePosition) {
         this.circlePosition = nextCirclePosition;
-    }
-
-    public SimpleIntegerProperty countOfCirclesProperty() {
-        return countOfCircles;
     }
 
     public static void main(String[] args) {
