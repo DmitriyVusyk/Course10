@@ -1,4 +1,6 @@
-package module5_2.module5_2_1.entites;
+package module5_2.module5_2_1;
+
+import module5_2.module5_2_1.entites.*;
 
 import java.util.Arrays;
 
