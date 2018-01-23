@@ -57,13 +57,13 @@ public class RealPlayerFX extends Application {
         primaryStage.show();
     }
 
-    private void chooseFile(){
+    private void chooseFile() {
         FileChooser chooser = new FileChooser();
         FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("select your media(*.mp3)", "*.mp3");
         chooser.getExtensionFilters().add(filter);
         File file = chooser.showOpenDialog(this.stage);
 
-        if ( file !=null){
+        if (file != null) {
             musicLabel.setText(file.getName());
 
             try {
@@ -72,7 +72,7 @@ public class RealPlayerFX extends Application {
                 e1.printStackTrace();
             }
 
-        }else{
+        } else {
             musicLabel.setText("Invalid Filename");
             this.audioFile = null;
         }
@@ -80,10 +80,10 @@ public class RealPlayerFX extends Application {
         player.stop();
     }
 
-    private void playFile(){
-        if(fileInUse){
+    private void playFile() {
+        if (fileInUse) {
             player.play();
-        }else{
+        } else {
             Media pick = new Media(this.audioFile);
             player = new MediaPlayer(pick);
             player.play();
@@ -91,8 +91,16 @@ public class RealPlayerFX extends Application {
         fileInUse = true;
     }
 
-    private void pauseFile(){
+    private void pauseFile() {
         player.pause();
+    }
+
+    private void moveForward() {
+        player.seek(player.getCurrentTime().multiply(1.5));
+    }
+
+    private void moveBackward() {
+        player.seek(player.getCurrentTime().divide(1.5));
     }
 
     //create a toolbar
@@ -103,6 +111,7 @@ public class RealPlayerFX extends Application {
         toolBar.alignmentProperty().isBound();
         toolBar.setSpacing(5);
         toolBar.setStyle("-fx-background-color: Black");
+
 
         //PLAY_BUTTON:
         //create a Button and add Image to Button
@@ -119,7 +128,6 @@ public class RealPlayerFX extends Application {
             playButton.setStyle("-fx-background-color: Black");
             playButton.setStyle("-fx-body-color: Black");
         });
-
         playButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
             playButton.setStyle("-fx-background-color: Black");
         });
@@ -132,18 +140,16 @@ public class RealPlayerFX extends Application {
         chooseFileButton.setGraphic(new ImageView(chooseFileImage));
         chooseFileButton.setStyle("-fx-background-color: Black");
 
-        chooseFileButton.setOnAction((ActionEvent e) -> {
-            chooseFile();
-        });
+        chooseFileButton.setOnAction((ActionEvent e) -> chooseFile());
 
         chooseFileButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
             chooseFileButton.setStyle("-fx-background-color: Black");
             chooseFileButton.setStyle("-fx-body-color: Black");
         });
-
         chooseFileButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
             chooseFileButton.setStyle("-fx-background-color: Black");
         });
+
 
         //PAUSE_BUTTON:
         Image pauseButtonImage = new Image(getClass().getResourceAsStream("images/Pause.png"));
@@ -158,10 +164,10 @@ public class RealPlayerFX extends Application {
             pauseButton.setStyle("-fx-body-color: Black");
 
         });
-
         pauseButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
             pauseButton.setStyle("-fx-background-color: Black");
         });
+
 
         // FORWARD_BUTTON:
         Image forwardButtonImage = new Image(getClass().getResourceAsStream("images/Forward.png"));
@@ -169,18 +175,16 @@ public class RealPlayerFX extends Application {
         forwardButton.setGraphic(new ImageView(forwardButtonImage));
         forwardButton.setStyle("-fx-background-color: Black");
 
-        forwardButton.setOnAction((ActionEvent e) ->{
+        forwardButton.setOnAction((ActionEvent e) -> moveForward());
 
-        });
-
-        forwardButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) ->{
+        forwardButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
             forwardButton.setStyle("-fx-background-color: Black");
             forwardButton.setStyle("-fx-body-color: Black");
         });
-
-        forwardButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+        forwardButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
             forwardButton.setStyle("-fx-background-color: Black");
         });
+
 
         //BACKWARD_BUTTON:
         Image backwardButtonImage = new Image(getClass().getResourceAsStream("images/Back.png"));
@@ -188,20 +192,20 @@ public class RealPlayerFX extends Application {
         backwardButton.setGraphic(new ImageView(backwardButtonImage));
         backwardButton.setStyle("-fx-background-color: Black");
 
-        backwardButton.setOnAction((ActionEvent e) ->{
+        backwardButton.setOnAction((ActionEvent e) -> moveBackward());
 
-        });
-
-        backwardButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) ->{
+        backwardButton.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
             backwardButton.setStyle("-fx-background-color: Black");
             backwardButton.setStyle("-fx-body-color: Black");
         });
-
-        backwardButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e)->{
+        backwardButton.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
             backwardButton.setStyle("-fx-background-color: Black");
         });
 
-        toolBar.getChildren().addAll(chooseFileButton,backwardButton, playButton, pauseButton,forwardButton);
+        //SLIDER:
+
+
+        toolBar.getChildren().addAll(chooseFileButton, backwardButton, playButton, pauseButton, forwardButton);
 
         return toolBar;
     }
