@@ -3,6 +3,11 @@ package module6;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * My implementation of HashMap
+ * @param <K> key type
+ * @param <V> value type
+ */
 public class MyHashMap<K, V> {
 
     /**
