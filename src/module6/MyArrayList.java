@@ -1,9 +1,11 @@
 package module6;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * My own ArrayList implementation
+ *
  * @param <T> type of data in ArrayList
  */
 public class MyArrayList<T> {
@@ -14,7 +16,11 @@ public class MyArrayList<T> {
 
 
     public MyArrayList() {
-        this.array = (T[]) new Object[DEFAULT_CAPACITY];
+        try {
+            this.array = (T[]) new Object[DEFAULT_CAPACITY];
+        } catch (ClassCastException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -68,7 +74,7 @@ public class MyArrayList<T> {
     }
 
     /**
-    Print all elements in list
+     * Print all elements in list
      */
     public void printList() {
         System.out.print("[");

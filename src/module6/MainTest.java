@@ -6,7 +6,7 @@ public class MainTest {
 
     public static void main(String[] args) {
 
-    // Test of MyArrayList:
+        // Test of MyArrayList:
 
         System.out.println("----------TEST OF ARRAYLIST:");
 
@@ -30,8 +30,8 @@ public class MainTest {
         System.out.println("Print list after clear: ");
         arrayList.printList();
 
-    // Test of MyLinkedList
 
+        // Test of MyLinkedList
         System.out.println("----------TEST OF LINKEDLIST:");
 
         MyLinkedList<Integer> linkedList = new MyLinkedList<>();
@@ -54,7 +54,8 @@ public class MainTest {
         linkedList.clear();
         System.out.println(Arrays.toString(linkedList.toArray()));
 
-     //Test of my Queue
+
+        //Test of my Queue
         System.out.println("----------TEST OF QUEUE:");
 
         MyQueue<Integer> queue = new MyQueue<>();
@@ -78,6 +79,58 @@ public class MainTest {
         System.out.println("Queue after clearing: ");
         queue.clear();
         System.out.println(Arrays.toString(linkedList.toArray()));
+
+
+        //Test of MySack
+        System.out.println("----------TEST OF STACK:");
+
+        MyStack<Integer> stack = new MyStack<>();
+
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
+
+        System.out.println("Stack after filling: ");
+        System.out.println(Arrays.toString(stack.toArray()));
+        System.out.println("size" + stack.size());
+        System.out.println("Peek first element in stack: " + stack.peek());
+        System.out.println("Pop: " + stack.pop());
+        System.out.println("Stack after pop: ");
+        System.out.println(Arrays.toString(stack.toArray()));
+        System.out.println("Remove element at index : ");
+        stack.remove(2);
+        System.out.println("Stack after remove: ");
+        System.out.println(Arrays.toString(stack.toArray()));
+        System.out.println("Stack after clearing: ");
+        stack.clear();
+        System.out.println(Arrays.toString(stack.toArray()));
+
+        //Test of MyHashMap
+        MyHashMap<String, Integer> map = new MyHashMap<>();
+
+        System.out.println("----------TEST OF HASHMAP:");
+        System.out.println("Fill MyHashMap:  ");
+        map.put("1", 111);
+        map.put("2", 222);
+        map.put("3", 333);
+        map.put("4", 444);
+        map.put("5", 555);
+        map.put("6", 666);
+        map.put("7", 777);
+        map.put("8", 888);
+        System.out.println(map);
+
+        System.out.println("Getting value from element: " + map.get("3"));
+
+        System.out.println("Removing element: ");
+        map.remove("2");
+        System.out.println(map);
+        System.out.println("Count of elements in Map: " + map.size());
+        System.out.println("Clearing HashMap:");
+        map.clear();
+        System.out.println(map);
     }
 
 }
