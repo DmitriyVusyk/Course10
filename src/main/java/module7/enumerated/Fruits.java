@@ -1,0 +1,5 @@
+package module7.enumerated;
+
+public enum Fruits {
+    MANDARIN, GRAPES, PEAR, GRAPEFRUIT, APPLE, STRAWBERRY, CHERRY, RASPBERRY, PINEAPPLE, BANANA
+}
